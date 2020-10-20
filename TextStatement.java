@@ -19,17 +19,4 @@ public class TextStatement extends Statement {
          " frequent renter points";
       return foot;
    }
-   
-   public String value(Customer aCustomer) {
-      Enumeration rentals = aCustomer.getRentals();
-      String result = valueHead(aCustomer);
-      while (rentals.hasMoreElements()) {
-         Rental each = (Rental) rentals.nextElement();
-         //show figures for this rental
-         result += valueRental(each);
-      }
-      //add footer lines
-      result += valueFoot(aCustomer);
-      return result;
-   }
 }

@@ -19,17 +19,4 @@ public class HtmlStatement extends Statement {
       "</EM> frequent renter points<P>";
       return foot;
    }
-   
-   public String value(Customer aCustomer) {
-      Enumeration rentals = aCustomer.getRentals();
-      String result = valueHead(aCustomer);
-      while (rentals.hasMoreElements()) {
-         Rental each = (Rental) rentals.nextElement();
-         //show figures for each rental
-         result += valueRental(each);
-      }
-      //add footer lines
-      result += valueFoot(aCustomer);
-      return result;
-   }
 }
